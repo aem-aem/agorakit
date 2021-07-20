@@ -1,0 +1,1 @@
+sudo certbot certonly --standalone --agree-tos --no-eff-email -d agora.domain.com --rsa-key-size 4096
