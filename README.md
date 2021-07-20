@@ -1,6 +1,8 @@
 # agorakit
 Private install of Agorakit
 
+Source: https://docs.agorakit.org/#/en/install
+
 # Update with your domain
 `for file in agorakit/000-default.conf certbot certbot.renew agorakit/default-ssl.conf agorakit/.env ; do sed -i 's/domain\.com/<YOUR DOMAIN>/' $file; done`
 
