@@ -1,0 +1,1 @@
+*/5 * * * * docker exec agorakit.local php artisan schedule:run

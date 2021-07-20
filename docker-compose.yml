@@ -12,7 +12,7 @@ services:
       MYSQL_RANDOM_ROOT_PASSWORD: "yes"
       MYSQL_DATABASE: "agorakit"
       MYSQL_USER: "agorakit"
-      MYSQL_PASSWORD: "sFdTjKaDgVXhz"
+      MYSQL_PASSWORD: "p@ssw0rd"
     volumes:
       - mariadb:/var/lib/mysql
 
