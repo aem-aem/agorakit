@@ -1,0 +1,30 @@
+version: '3.4'
+volumes:
+  mariadb:
+    name: mariadb.volume
+
+services:
+  db:
+    image: mariadb
+    container_name: db.local
+    restart: always
+    environment:
+      MYSQL_RANDOM_ROOT_PASSWORD: "yes"
+      MYSQL_DATABASE: "agorakit"
+      MYSQL_USER: "agorakit"
+      MYSQL_PASSWORD: "sFdTjKaDgVXhz"
+    volumes:
+      - mariadb:/var/lib/mysql
+
+  agorakit:
+    container_name: agorakit.local
+    image: agorakit.image
+    build:
+      dockerfile: agorakit/Dockerfile
+      context: .
+    ports:
+      - "443:443"
+      - "80:80"
+    volumes:
+      - ./agorakit/.env:/opt/agorakit/.env
+      - /etc/letsencrypt/:/etc/letsencrypt/:ro
