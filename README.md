@@ -2,9 +2,7 @@
 Private install of Agorakit
 
 # Update with your domain
-`cd agorakit`
-
-`for file in 000-default.conf certbot certbot.renew default-ssl.conf .env ; do sed -i 's/domain\.com/<YOUR DOMAIN>/' $file; done`
+`for file in agorakit/000-default.conf certbot certbot.renew agorakit/default-ssl.conf agorakit/.env ; do sed -i 's/domain\.com/<YOUR DOMAIN>/' $file; done`
 
 # Update with your email password, and use the same for internal mariadb user
 `for file in docker-compose.yml agorakit/.env ; do sed -i 's/p@ssw0rd/<YOUR PASSWORD>/' $file; done`
@@ -34,6 +32,3 @@ sudo iptables -t filter -A INPUT -p tcp --dport 443 -j ACCEPT
 
 # Schedule notifications sending
 `crontab -l | cat - crontab > /tmp/crontab && crontab /tmp/crontab`
-
-# TODO
-Check outgoing email - not working with OVH
