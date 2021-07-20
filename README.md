@@ -32,3 +32,8 @@ sudo iptables -t filter -A INPUT -p tcp --dport 443 -j ACCEPT
 
 # Schedule notifications sending
 `crontab -l | cat - crontab > /tmp/crontab && crontab /tmp/crontab`
+
+# Backup database and storage
+Storage and database are persisted into a docker volume
+
+TODO : sync with a remote backup

@@ -2,6 +2,8 @@ version: '3.4'
 volumes:
   mariadb:
     name: mariadb.volume
+  storage:
+    name: storage.volume
 
 services:
   db:
@@ -26,5 +28,6 @@ services:
       - "443:443"
       - "80:80"
     volumes:
+      - storage:/opt/agorakit/storage
       - ./agorakit/.env:/opt/agorakit/.env
       - /etc/letsencrypt/:/etc/letsencrypt/:ro
