@@ -29,5 +29,7 @@ services:
       - "80:80"
     volumes:
       - storage:/opt/agorakit/storage
+      - ./agorakit/fr.json:/opt/agorakit/resources/lang/fr.json
+      - ./agorakit/fr:/opt/agorakit/resources/lang/fr
       - ./agorakit/.env:/opt/agorakit/.env
       - /etc/letsencrypt/:/etc/letsencrypt/:ro
