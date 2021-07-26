@@ -39,7 +39,7 @@ return array (
   'select_one_file' => 'Sélectionnez un fichier',
   'insights' => 'Statistiques',
   'users' => 'Utilisateurs',
-  'name' => 'Nom',
+  'name' => 'Prenom - Ville',
   'email' => 'Email',
   'registration_time' => 'Date d\'enregistrement',
   'last_activity' => 'Dernière activité',
