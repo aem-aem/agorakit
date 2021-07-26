@@ -33,7 +33,7 @@ sudo iptables -t filter -A INPUT -p tcp --dport 443 -j ACCEPT
 `docker exec -it agorakit.local php artisan db:seed --force`
 
 # Schedule notifications sending
-`crontab -l | cat - crontab > /tmp/crontab && crontab /tmp/crontab`
+`crontab -l | cat - crontab | sort -u > /tmp/crontab && crontab /tmp/crontab`
 
 # Backup database and storage
 Storage and database are persisted into a docker volume
