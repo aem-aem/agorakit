@@ -1,1 +1,2 @@
-*/5 * * * * docker exec agorakit.local php artisan schedule:run
+*/5 * * * * docker exec agorakit.local php artisan schedule:run > /dev/null
+0 0 * * * docker exec db.local mysql -u agorakit -psFdTjKaDgVXhz1 agorakit -e "update membership set notification_interval = 1440; update groups set group_type=2;"
