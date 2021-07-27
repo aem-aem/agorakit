@@ -45,4 +45,3 @@ A backup every 6 hours of storage and database dump is already configured to wor
 Update `S3_BACKUP_BUCKET_NAME` environment variable in `docker-compose.yml`
 Update `ACCESS_KEY` and `SECRET_KEY` in `aws/credentials`
   
-  
