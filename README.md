@@ -43,6 +43,6 @@ Storage and database are persisted into a docker volume
 A backup every 6 hours of storage and database dump is already configured to work with Scaleway Object Storage (included in crontab maintenance tasks)
 
 Update `S3_BACKUP_BUCKET_NAME` environment variable in `docker-compose.yml`
-Update `ACCESS_KEY` and `SECRET_KEY` in `agorakit/aws/credentials`
+Update `ACCESS_KEY` and `SECRET_KEY` in `aws/credentials`
   
   
