@@ -1,7 +1,9 @@
-# agorakit
+# Agora
 Private install of Agorakit
 
 Source: https://docs.agorakit.org/#/en/install
+
+[Support](https://agorakit.org/fr/soutenir.php) and thanks to [Philippe](https://github.com/philippejadin), author of [Agorakit](https://github.com/agorakit/agorakit)
 
 # Update with your domain
 `for file in agorakit/000-default.conf certbot certbot.renew agorakit/default-ssl.conf agorakit/.env ; do sed -i 's/domain\.com/<YOUR DOMAIN>/' $file; done`
@@ -32,10 +34,15 @@ sudo iptables -t filter -A INPUT -p tcp --dport 443 -j ACCEPT
 
 `docker exec -it agorakit.local php artisan db:seed --force`
 
-# Schedule notifications sending
+# Schedule notifications sending and maintenance tasks
 `crontab -l | cat - crontab | sort -u > /tmp/crontab && crontab /tmp/crontab`
 
 # Backup database and storage
 Storage and database are persisted into a docker volume
 
-TODO : sync with a remote backup
+A backup every 6 hours of storage and database dump is already configured to work with Scaleway Object Storage (included in crontab maintenance tasks)
+
+Update `S3_BACKUP_BUCKET_NAME` environment variable in `docker-compose.yml`
+Update `ACCESS_KEY` and `SECRET_KEY` in `agorakit/aws/credentials`
+  
+  
