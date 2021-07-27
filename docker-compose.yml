@@ -33,7 +33,7 @@ services:
       - "443:443"
       - "80:80"
     volumes:
-      - ./agorakit/aws:/root/.aws
+      - ./aws:/root/.aws
       - storage:/opt/agorakit/storage
       - ./agorakit/fr.json:/opt/agorakit/resources/lang/fr.json
       - ./agorakit/fr:/opt/agorakit/resources/lang/fr
