@@ -23,5 +23,9 @@ COPY agorakit/entrypoint.sh /entrypoint.sh
 RUN chmod a+x /entrypoint.sh
 CMD /entrypoint.sh
 
+RUN apt-get update && apt-get install -y python3-pip && pip3 install awscli awscli-plugin-endpoint
+COPY agorakit/aws/backup.sh /backup.sh
+RUN chmod a+x /backup.sh
+
 EXPOSE 443
 EXPOSE 80

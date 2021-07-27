@@ -1,0 +1,12 @@
+[plugins]
+endpoint = awscli_plugin_endpoint
+
+[default]
+region = nl-ams
+s3 =
+  endpoint_url = https://s3.nl-ams.scw.cloud
+  max_concurrent_requests = 100
+  max_queue_size = 1000
+s3api =
+  endpoint_url = https://s3.nl-ams.scw.cloud
+

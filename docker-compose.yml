@@ -18,10 +18,14 @@ services:
     #entrypoint: ["mysqld_safe", "--skip-grant-tables", "--skip-networking"] # in case of DB maintenance => docker exec -it db.local mariadb -uroot
     volumes:
       - mariadb:/var/lib/mysql
+      - storage:/tmp/storage
 
   agorakit:
     container_name: agorakit.local
     image: agorakit.image
+    restart: always
+    environment:
+      S3_BACKUP_BUCKET_NAME: "iqmgjxzvttutcmbucab"
     build:
       dockerfile: agorakit/Dockerfile
       context: .
@@ -29,6 +33,7 @@ services:
       - "443:443"
       - "80:80"
     volumes:
+      - ./agorakit/aws:/root/.aws
       - storage:/opt/agorakit/storage
       - ./agorakit/fr.json:/opt/agorakit/resources/lang/fr.json
       - ./agorakit/fr:/opt/agorakit/resources/lang/fr
