@@ -7,9 +7,12 @@ volumes:
 
 services:
   db:
-    image: mariadb
+    image: db.image
     container_name: db.local
     restart: always
+    build:
+      dockerfile: db/Dockerfile
+      context: .
     environment:
       MYSQL_RANDOM_ROOT_PASSWORD: "yes"
       MYSQL_DATABASE: "agorakit"
