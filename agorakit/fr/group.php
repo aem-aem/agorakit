@@ -12,7 +12,7 @@ return array (
   'features_help' => 'Activez ou désactivez les fonctionnalités de votre groupe, vous pourrez les réactiver à tout moment.',
   'history_of_this_group' => 'Historique des modifications de ce groupe',
   'join' => 'Rejoindre',
-  'latest_discussions' => 'Dossiers récents',
+  'latest_discussions' => 'Discussions récentes',
   'latest_files' => 'Fichiers récents',
   'name' => 'Nom du groupe',
   'open' => 'Groupe public',

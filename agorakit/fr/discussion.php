@@ -1,5 +1,5 @@
 <?php
 
 return [
-  'create_one_button' => 'Instruire un nouveau dossier',
+  'create_one_button' => 'Démarrer une discussion pour instruire une idée',
 ];
