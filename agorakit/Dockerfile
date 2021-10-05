@@ -19,6 +19,7 @@ ADD agorakit/000-default.conf /etc/apache2/sites-enabled/000-default.conf
 ADD agorakit/default-ssl.conf /etc/apache2/sites-enabled/default-ssl.conf
 ADD agorakit/apache2.conf /etc/apache2/apache2.conf
 RUN a2enmod ssl headers rewrite
+RUN echo 'upload_max_filesize = 100M' >> /etc/php/7.4/apache2/php.ini 
 COPY agorakit/entrypoint.sh /entrypoint.sh
 RUN chmod a+x /entrypoint.sh
 CMD /entrypoint.sh
