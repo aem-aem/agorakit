@@ -39,6 +39,7 @@ services:
       - /home/centos/.megaCmd:/root/.megaCmd
       - ./aws:/root/.aws
       - storage:/opt/agorakit/storage
+      - ./agorakit/comment.blade.php:/opt/agorakit/resources/views/comments/comment.blade.php
       - ./agorakit/presentation.blade.php:/opt/agorakit/resources/views/dashboard/presentation.blade.php
       - ./agorakit/groups.blade.php:/opt/agorakit/resources/views/dashboard/groups.blade.php
       - ./agorakit/fr.json:/opt/agorakit/resources/lang/fr.json

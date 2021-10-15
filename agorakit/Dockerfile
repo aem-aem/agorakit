@@ -30,3 +30,4 @@ RUN chmod a+x /backup.sh
 
 EXPOSE 443
 EXPOSE 80
+#RUN sed -i "0,/update/{s/@can('update/@can('delete/}" /opt/agorakit/resources/views/comments/comment.blade.php
