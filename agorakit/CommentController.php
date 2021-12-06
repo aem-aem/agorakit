@@ -153,7 +153,7 @@ class CommentController extends Controller
      */
     public function destroy(Request $request, Group $group, Discussion $discussion, Comment $comment)
     {
-        $this->authorize('delete', $comment);
+        $this->authorize('delete', $comment); // Pour que l'admin puisse supprimer un commentaire dans la discussion
         $comment->delete();
         flash(trans('messages.ressource_deleted_successfully'));
 

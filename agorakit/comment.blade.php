@@ -28,7 +28,7 @@
 
 
 
-        @can('delete', $comment)
+        @can('delete', $comment) <!-- Pour que l'admin puisse supprimer un commentaire dans la discussion -->
         <div class="dropdown">
             <a class="rounded-full hover:bg-gray-400 w-10 h-10 flex items-center justify-center type=" button"
                 id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
