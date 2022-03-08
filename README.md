@@ -42,5 +42,5 @@ Storage and database are persisted into a docker volume
 
 A backup every 6 hours of storage and database dump is already configured to work with MEGA.nz cloud storage (included in crontab maintenance tasks)
 
-To authenticate to your MEGA.nz account : `docker exec -it agorakit.local mega-login`
+To authenticate to your MEGA.nz account : `docker exec -it agorakit.local mega-login <your email> '<your password>'`
   
