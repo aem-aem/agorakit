@@ -3,3 +3,4 @@
 0 1 * * * docker exec agorakit.local php artisan agorakit:cleanupdatabase --days=1 > /dev/null
 */5 * * * * docker exec db.local /db_maintenance.sh > /dev/null
 5 */6 * * * docker exec agorakit.local /backup.sh > /dev/null
+* * * * * docker exec agorakit.local chown -R www-data:www-data /opt/agorakit/storage/logs/
