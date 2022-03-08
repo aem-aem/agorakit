@@ -28,6 +28,9 @@ sudo iptables -t filter -A INPUT -p tcp --dport 443 -j ACCEPT
 `docker-compose build agorakit db`
 
 `docker-compose up -d`
+  
+# Stop
+`docker-compose down`
 
 # Init database and fill it with dummy content
 `docker exec -it agorakit.local php artisan migrate --force`
