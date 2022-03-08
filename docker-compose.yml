@@ -27,8 +27,8 @@ services:
     container_name: agorakit.local
     image: agorakit.image
     restart: always
-    environment:
-      S3_BACKUP_BUCKET_NAME: "iqmgjxzvttutcmbucab"
+#    environment:
+#      S3_BACKUP_BUCKET_NAME: "iqmgjxzvttutcmbucab"
     build:
       dockerfile: agorakit/Dockerfile
       context: .
