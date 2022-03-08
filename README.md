@@ -25,9 +25,12 @@ sudo iptables -t filter -A INPUT -p tcp --dport 443 -j ACCEPT
 `sh certbot`
 
 # Build and start
-`docker-compose build agorakit`
+`docker-compose build agorakit db`
 
 `docker-compose up -d`
+  
+# Stop
+`docker-compose down`
 
 # Init database and fill it with dummy content
 `docker exec -it agorakit.local php artisan migrate --force`
@@ -40,8 +43,7 @@ sudo iptables -t filter -A INPUT -p tcp --dport 443 -j ACCEPT
 # Backup database and storage
 Storage and database are persisted into a docker volume
 
-A backup every 6 hours of storage and database dump is already configured to work with Scaleway Object Storage (included in crontab maintenance tasks)
+A backup every 6 hours of storage and database dump is already configured to work with MEGA.nz cloud storage (included in crontab maintenance tasks)
 
-Update `S3_BACKUP_BUCKET_NAME` environment variable in `docker-compose.yml`
-Update `ACCESS_KEY` and `SECRET_KEY` in `aws/credentials`
+To authenticate with your MEGA.nz account you need to login only once : `docker exec -it agorakit.local mega-login <your email> '<your password>'`
   
