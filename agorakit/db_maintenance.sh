@@ -13,7 +13,7 @@ MYSQL_OPTS="-u$MYSQL_USER -p$MYSQL_PASSWORD $MYSQL_DATABASE"
 #if [ $hour -eq 0 ] || [ $hour -eq 6 ] || [ $hour -eq 12 ]  || [ $hour -eq 18 ]; then
 if [[ (( $hour -eq 0 || $hour -eq 6 || $hour -eq 12 || $hour -eq 18 )) && $minute -eq 0 ]]; then
 	mysqldump $MYSQL_OPTS -C -r /tmp/storage/dump.sql
-	mysql $MYSQL_OPTS -e "update membership set notification_interval = 1440; update groups set group_type=1; update membership set notification_interval=-1 where user_id<3;"
+	mysql $MYSQL_OPTS -e "update membership set notification_interval=1440 where notification_interval<1440; update groups set group_type=1; update membership set notification_interval=-1 where user_id<3;"
 fi
 
 for freq in "HEBDO" "MENSUEL"; do
