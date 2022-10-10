@@ -1,6 +1,6 @@
 */5 * * * * docker exec agorakit.local php artisan schedule:run >> /home/centos/AGORA/crontab_logs/run.log
 0 0 * * * docker exec agorakit.local php artisan agorakit:deletefiles --force >> /home/centos/AGORA/crontab_logs/deletefiles.log
 0 1 * * * docker exec agorakit.local php artisan agorakit:cleanupdatabase --days=1 >> /home/centos/AGORA/crontab_logs/cleanupdatabase.log
-*/5 * * * * docker exec db.local /db_maintenance.sh > /dev/null
+*/5 * * * * docker exec agorakit_db.local /db_maintenance.sh > /dev/null
 5 */6 * * * docker exec agorakit.local /backup.sh > /dev/null
 * * * * * docker exec agorakit.local chown -R www-data:www-data /opt/agorakit/storage/logs/ /opt/agorakit/storage/app/
